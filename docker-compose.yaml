@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  db:
+    image: clickhouse/clickhouse-server:24-alpine
+    ports:
+      - 9000:9000
+      - 8123:8123
+    environment:
+      CLICKHOUSE_USER: otel
+      CLICKHOUSE_PASSWORD: otel

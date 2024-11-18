@@ -1,0 +1,20 @@
+receivers:
+  hostmetrics:
+    collection_interval: 10s  # Use 'collection_interval' instead of 'interval'
+    scrapers:
+      cpu:
+      memory:
+
+exporters:
+  # file:
+  #   path: /tmp/logs/otel-exporter.json  # Path where metrics will be logged
+  clickhousemetrics:
+    endpoint: tcp://localhost:9000
+    password: 'otel'
+    username: 'otel'
+
+service:
+  pipelines:
+    metrics:
+      receivers: [hostmetrics]
+      exporters: [clickhousemetrics]
