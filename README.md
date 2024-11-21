@@ -12,14 +12,14 @@
 ### How to use
 #### 1) Start clickhouse database
 ```bash
-   docker compose up -d
+docker compose up -d
 ```
 
 #### 2) Start Collector 
 For matrics reciver we hostmetrics to get metrics of cpu and memory
 
 ```bash
-   ./otelcol-dev/otelcol-dev --config="config.yaml"
+./otelcol-dev/otelcol-dev --config="config.yaml"
 ```
 
 #### 3) Start Server
